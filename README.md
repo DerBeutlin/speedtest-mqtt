@@ -1,7 +1,8 @@
 # speedtest-mqtt
 Internet connection speedtest based on the speedtest-cli library
 (https://pypi.python.org/pypi/speedtest-cli/). Requires Python 3,
-speedtest-cli and paho-mqtt.
+speedtest-cli and paho-mqtt. Intended for use with openhab.
+Tested on Linux and with openhab2.
 
 ## Installation
 Use the setup script to install:
