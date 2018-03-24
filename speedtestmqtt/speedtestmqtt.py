@@ -72,10 +72,11 @@ class SpeedTestMQTT(object):
         self._client.publish(self._mqtt_topic + "/state/server_location", server_location)
         server_sponsor = results["server"]["sponsor"]
         self._client.publish(self._mqtt_topic + "/state/server_sponsor", server_sponsor)
-        ipaddr = results["client"]["ip"]
-        self._client.publish(self._mqtt_topic + "/state/ip", ipaddr)
-        isp = results["client"]["isp"]
-        self._client.publish(self._mqtt_topic + "/state/isp", isp)
+        if "client" in results:
+            ipaddr = results["client"]["ip"]
+            self._client.publish(self._mqtt_topic + "/state/ip", ipaddr)
+            isp = results["client"]["isp"]
+            self._client.publish(self._mqtt_topic + "/state/isp", isp)
         
     def start(self):
         self._run = True
