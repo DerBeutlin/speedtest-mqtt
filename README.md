@@ -18,7 +18,7 @@ Example:
 
     speedtest-mqtt --broker localhost
     
-The default client id ist "speedtest", the default topic "sppedtest".
+The default client id ist "speedtest", the default topic "speedtest".
 
 By default, speedtests are run every hour. To run a speedtest manually,
 publish the message "run" to "<mqtt_topic>/command/run". To change the
