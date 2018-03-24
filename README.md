@@ -16,7 +16,7 @@ The setup script installs the `speedtest-mqtt` command line program. Usage:
 All paramters are optional.
 Example:
 
-    cul-mqtt --broker localhost
+    speedtest-mqtt --broker localhost
     
 The default client id ist "speedtest", the default topic "sppedtest".
 
