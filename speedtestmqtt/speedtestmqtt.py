@@ -59,9 +59,11 @@ class SpeedTestMQTT(object):
         # publish info
         speed_download = results["download"]
         self._client.publish(self._mqtt_topic + "/state/speed_download", speed_download)
+        self._client.publish(self._mqtt_topic + "/state/speed_download_mbit", speed_download/1024.0/1024.0)
         self._client.publish(self._mqtt_topic + "/state/speed_download_formatted", sizeof_fmt(speed_download) + "/s")
         speed_upload = results["upload"]
         self._client.publish(self._mqtt_topic + "/state/speed_upload", speed_upload)
+        self._client.publish(self._mqtt_topic + "/state/speed_upload_mbit", speed_upload/1024.0/1024.0)
         self._client.publish(self._mqtt_topic + "/state/speed_upload_formatted", sizeof_fmt(speed_upload) + "/s")
         ping = results["ping"]
         self._client.publish(self._mqtt_topic + "/state/ping", ping)
