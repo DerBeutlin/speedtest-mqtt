@@ -56,6 +56,9 @@ class SpeedTestMQTT(object):
     def on_speedtest_finished(self, results):        
         self._logger.info("Speedtest finished.")
         self._client.publish(self._mqtt_topic + "/state/running", "0")
+        if results is None:
+            self._logger.error("Speedtest returned no results.")
+            return
         # publish info
         speed_download = results["download"]
         self._client.publish(self._mqtt_topic + "/state/speed_download", speed_download)
