@@ -1,10 +1,9 @@
 # -*- coding: utf-8 -*-
 from distutils.core import setup
-from culmqtt import __version__ as ver
 
 
 setup(name="speedtestmqtt",
-      version=ver,
+      version="0.0.1",
       description="Speedtest with MQTT interface.",
       author="Sven Festersen",
       author_email="sven@sven-festersen.de",
